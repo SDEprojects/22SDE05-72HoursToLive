@@ -166,13 +166,14 @@ public class GameController {
                         break;
                     case "help":
                         werewolfCanAttack = false;
-                        System.out.println("\nYou can go to a room by typing \"go [direction]\".\n" +
-                                "You can use an item by typing \"use [item]\".\n" +
-                                "You can equip armor and weapons by typing \"equip [item]\".\n" +
-                                "You can attack a werewolf by typing \"attack wolf\".\n" +
-                                "You can look for items in a room by typing \"look\".\n" +
-                                "You can check your inventory by typing \"inventory\".\n" +
-                                "You can quit the game by typing \"quit\".\n");
+                        System.out.println(bundle.getString("help_menu1"));
+//                        System.out.println("\nYou can go to a room by typing \"go [direction]\".\n" +
+//                                "You can use an item by typing \"use [item]\".\n" +
+//                                "You can equip armor and weapons by typing \"equip [item]\".\n" +
+//                                "You can attack a werewolf by typing \"attack wolf\".\n" +
+//                                "You can look for items in a room by typing \"look\".\n" +
+//                                "You can check your inventory by typing \"inventory\".\n" +
+//                                "You can quit the game by typing \"quit\".\n");
                         System.out.println("Directions are: North, East, South, West.");
                         System.out.println("\nPress enter to return to the menu screen...");
                         Scanner scanner = new Scanner(System.in);
