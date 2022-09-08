@@ -4,9 +4,11 @@ import main.java.model.RoomMovement;
 import main.java.view.Story;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 public class GameSettings {
     public static String roomName;
+    private static final ResourceBundle bundle = ResourceBundle.getBundle("main.resources.strings");
 
     public void readGameStory() {
         Story gameStory = new Story();
@@ -20,15 +22,15 @@ public class GameSettings {
         movement.firstRoom();
         while (true) {
             if (GameController.player.getHealth() <= 0) {
-                System.out.println("You have died!");
+                System.out.println(bundle.getString("player_dead1"));
                 break;
             }
             else if (GameController.timer== 24){
-                System.out.println("You have run out of time!");
+                System.out.println(bundle.getString("time_out1"));
                 break;
             }
             else if (GameController.player.getInventory().contains("Trophy")) {
-                System.out.println("The room begins to shake as you step through the time portal!");
+                System.out.println(bundle.getString("trophy_response1"));
                 break;
             }
             else {
@@ -39,8 +41,8 @@ public class GameSettings {
 
     }
     public void endGame() {
-        System.out.println("Game Over!");
-        System.out.println("Thanks for playing!");
-        System.out.println("Play again?");
+        System.out.println(bundle.getString("game_over1"));
+        System.out.println(bundle.getString("game_over2"));
+        System.out.println(bundle.getString("game_over3"));
     }
 }
